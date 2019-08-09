@@ -34,16 +34,16 @@ hippie_mon_dssh ()
    echo "</head>"
    echo "<body>"
 
-   echo ""
-   echo "Timestamp = $TIMESTAMP"
-   echo ""
+   echo "<br>"
+   echo "<div>Timestamp = $TIMESTAMP</div>"
+   echo "<br>"
 
    for HOST in `cat $HOST_FILE`
    do
       echo $HOST
       /bin/ssh -o ConnectTimeout=5 $HOST $INPUT_COMMAND
-      echo "####################################"
-      echo ""
+      echo "<div>####################################</div>"
+      echo "<br>"
    done
 
    echo "</body>"
