@@ -67,31 +67,31 @@ rhel_mon()
    # Show Hostname and Version Details
    /usr/bin/hostnamectl |egrep -i "hostname|System|Kernel"
 
-   echo ""
+   echo "<br>"
 
    # Show NTP Info
    /usr/bin/timedatectl |egrep "Local time|NTP"
 
-   echo ""
+   echo "<br>"
 
    # Show Memory Utilization at this Point in Time
    #/usr/bin/free -m
    echo "-> Percentage of RAM in Use: `/usr/bin/free -m |grep Mem |awk '{print $3/$2 * 100.0}'`"
    echo "-> Percentage of Swap in Use: `/usr/bin/free -m |grep Swap |awk '{print $3/$2 * 100.0}'`"
 
-   echo ""
+   echo "<br>"
 
    # Show CPU Utilization at this Point in Time
    /usr/bin/top -bn1 |grep -v KiB |head -n 16
    echo "   .........."
 
-   echo ""
+   echo "<br>"
 
    # Disk Space
    /usr/bin/df -h |head -n 1
    /usr/bin/df -h |sort -nr -k 5,5 |grep -v Avail
 
-   echo ""
+   echo "<br>"
 
 }
 
@@ -113,7 +113,7 @@ rhel_main()
    echo "Gathering Monitor Performance Data"
    echo "----------------------------------"
    echo "Runtime = $TIMESTAMP"
-   echo ""
+   echo "<br>"
 
    rhel_mon
 
