@@ -34,7 +34,6 @@ hippie_mon_dssh ()
    echo "</head>"
    echo "<body>"
 
-   echo "<br>"
    echo "<div>Timestamp = $TIMESTAMP</div>"
    echo "<br>"
 
