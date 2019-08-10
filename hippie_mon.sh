@@ -76,21 +76,21 @@ rhel_mon()
    echo "<br>"
 
    # Show Memory Utilization at this Point in Time
-   ram=`/usr/bin/free -m |grep Mem |awk '{print $3/$2 * 100.0}'`
-   swap=`/usr/bin/free -m |grep Swap |awk '{print $3/$2 * 100.0}'`
+   ram=`/usr/bin/free -m |grep Mem |awk '{print $3}'`
+   swap=`/usr/bin/free -m |grep Swap |awk '{print $3}'`
 
    ### Check if Zero so we do not get a Divide by Zero Warning ###
    if [ "$ram" = "0" ]
    then
       echo "-> Percentage of RAM in Use: 0.00"
    else
-      echo "-> Percentage of RAM in Use: $ram"
+      echo "-> Percentage of RAM in Use: `/usr/bin/free -m |grep Mem |awk '{print $3/$2 * 100.0}'`"
    fi
    if [ "$swap" = "0" ]
    then
       echo "-> Percentage of Swap in Use: 0"
    else
-      echo "-> Percentage of Swap in Use: $swap"
+      echo "-> Percentage of Swap in Use: `/usr/bin/free -m |grep Swap |awk '{print $3/$2 * 100.0}'`"
    fi
 
    echo "<br>"
