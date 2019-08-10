@@ -25,6 +25,7 @@
 #
 # 20190808 = Converted this to run with multiples hosts using Hippie_Mon_DSSH
 # 20190808 = Updated to condense output for email text
+# 20190810 = Added divide by zero check for ram and swap
 #
 #########################################################################
 
