@@ -80,13 +80,13 @@ rhel_mon()
    swap=`/usr/bin/free -m |grep Swap |awk '{print $3/$2 * 100.0}'`
 
    ### Check if Zero so we do not get a Divide by Zero Warning ###
-   if [ "$ram" -eq "0" ]
+   if [ "$ram" = "0" ]
    then
       echo "-> Percentage of RAM in Use: 0.00"
    else
       echo "-> Percentage of RAM in Use: $ram"
    fi
-   if [ "$swap" -eq "0" ]
+   if [ "$swap" = "0" ]
    then
       echo "-> Percentage of Swap in Use: 0"
    else
