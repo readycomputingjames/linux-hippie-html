@@ -14,5 +14,5 @@
 #
 #########################################################################
 
-/home/jhipp/scripts/mon/hippie_mon_dssh.sh /home/jhipp/scripts/mon/stage.list "/home/jhipp/scripts/mon/hippie_mon.sh --rhel |awk '{ printf \"<div>\"; print }' |awk '{ print \$0, \"</div>\" }'" |sendmail -t
+/home/jhipp/scripts/mon/hippie_mon_dssh.sh /home/jhipp/scripts/mon/stage.list "/home/jhipp/scripts/mon/hippie_mon.sh --rhel |awk '{ printf \"<div>\"; print }' |awk '{ print \$0, \"</div>\" }'" |/usr/sbin/sendmail -t
 
